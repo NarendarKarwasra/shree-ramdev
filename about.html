@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #font-color {
+            color: rgb(176, 16, 48);
+        }
+
+
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding: 1%;
+            position: fixed;
+            z-index: 3;
+            background: rgba(255, 255, 255, .9)
+        }
+
+        .logo {
+            width: 10%;
+            margin-left: 2%;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .nav {
+            width: 30%;
+            margin-right: 1%;
+        }
+
+        .nav button {
+            padding: 1% 5%;
+            border: 1px solid black;
+            margin-right: 2%;
+            border-radius: 10px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.7vw;
+            font-weight: 600;
+        }
+
+        .nav button:hover {
+            transform: translateY(-5px);
+            transition: all .2s;
+            background-color: rgb(245, 39, 80);
+            box-shadow: 0px 5px 7px rgb(45, 45, 45);
+        }
+
+        .nav button:not(:hover) {
+            transition: all .2s;
+        }
+
+        .container {
+            width: 90%;
+            margin-left: 5%;
+            padding-top: 15%;
+            margin-bottom: 5%;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 4vw;
+            padding-bottom: 5%;
+        }
+
+        .all-company {
+            width: 90%;
+            margin: 5%;
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            border: 1px solid black;
+        }
+
+        .all-content {
+            width: 50%;
+            padding: 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .all-content .bottom-img {
+            width: 150px;
+            background-position: 0px -79px;
+            background-size: 300px;
+            margin-bottom: 5%;
+        }
+
+        .all-content img {
+            width: 40%;
+        }
+
+        .all-content h1 {
+            font-size: 2.5vw;
+            font-weight: 600;
+            padding-top: 10%;
+        }
+
+        .all-content p {
+            font-size: 1.5vw;
+            padding-bottom: 1%;
+        }
+
+        .all-content button {
+            padding: 1% 5%;
+            border: 1px solid black;
+            margin-top: 10%;
+            border-radius: 10px;
+
+        }
+
+        .all-content a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.7vw;
+            font-weight: 600;
+        }
+
+        .all-content button:hover {
+            transform: translateY(-5px);
+            transition: all .2s;
+            background-color: rgb(245, 39, 80);
+            box-shadow: 0px 5px 7px rgb(45, 45, 45);
+        }
+
+        .all-content button:not(:hover) {
+            transition: all .2s;
+        }
+
+        .all-img {
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .all-img img {
+            width: 100%;
+            transform: scale(1.1);
+        }
+
+
+        .footer {
+            width: 100%;
+            background-color: rgb(191, 191, 191);
+            border-top: 1px solid black;
+        }
+
+        .foot-content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 5%;
+            color: black;
+        }
+
+        .footer-box {
+            width: 30%;
+            border-right: 1px solid rgb(28, 28, 28);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-box:last-child {
+            border: none;
+        }
+
+        .footer-box .bottom-img {
+            width: 100px;
+            background-position: 0px -50px;
+            background-size: 200px;
+            margin-bottom: 7%;
+        }
+
+        .footer-box img {
+            width: 80%;
+        }
+
+        .footer-box h1 {
+            font-size: 2.2vw;
+            padding: 2%;
+            padding-bottom: 0;
+        }
+
+        .location img {
+            width: 10%;
+            padding-bottom: 2%;
+        }
+
+        .footer-box p {
+            font-size: 1.4vw;
+        }
+
+        .social {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5%;
+        }
+
+        .social-box {
+            width: 10%;
+            margin-right: 2%;
+            cursor: pointer;
+        }
+
+        .social-box img {
+            width: 100%;
+        }
+
+        .sb-phone img {
+            width: 90%;
+        }
+
+
+        .foot-end {
+            width: 100%;
+            background-color: rgb(151, 151, 151);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .foot-end p {
+            font-size: 1.4vw;
+            padding: 1% 5%;
+            color: black;
+        }
+
+
+
+
+
+
+
+        @media (max-width: 1000px) {
+
+            .header {
+                padding: 2%;
+            }
+
+            .logo {
+                width: 15%;
+                margin-left: 1%;
+            }
+
+            .nav {
+                width: 40%;
+                margin-right: 1%;
+            }
+
+            .nav button {
+                padding: 1% 5%;
+                margin-right: 1%;
+                border-radius: 20px;
+            }
+
+            .nav a {
+                font-size: 2.5vw;
+                font-weight: 400;
+            }
+
+            .nav button:hover {
+                transform: translateY(-3px);
+            }
+
+
+            .container {
+                padding-top: 20%;
+            }
+
+            .container h1 {
+                font-size: 4.5vw;
+            }
+
+            .all-content img {
+                width: 50%;
+            }
+
+            .all-content .bottom-img {
+                width: 130px;
+                background-position: 0px -65px;
+                background-size: 250px;
+                margin-bottom: 2%;
+            }
+
+            .all-content h1 {
+                font-size: 4vw;
+                padding-top: 2%;
+                padding-bottom: 0;
+            }
+
+            .all-content p {
+                font-size: 2vw;
+            }
+
+            .all-content button {
+                padding: 2% 8%;
+                margin-top: 5%;
+                border-radius: 20px;
+            }
+
+            .all-content a {
+                font-size: 2.5vw;
+            }
+
+
+
+            .footer-box .bottom-img {
+                width: 80px;
+                background-position: 0px -38px;
+                background-size: 150px;
+            }
+
+            .footer-box h1 {
+                font-size: 3vw;
+                padding-bottom: 0;
+            }
+
+            .footer-box p {
+                font-size: 1.8vw;
+            }
+
+            .social-box {
+                width: 13%;
+                margin-right: 3%;
+            }
+
+            .foot-end p {
+                font-size: 2vw;
+            }
+
+        }
+
+
+
+
+        @media (max-width: 670px) {
+
+            .footer {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+
+
+
+        @media (max-width: 600px) {
+
+            .header {
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 1%;
+            }
+
+            .logo {
+                width: 20%;
+            }
+
+            .nav {
+                width: 100%;
+                text-align: center;
+                margin-top: 2%;
+                margin-bottom: 2%;
+                margin-left: 5%;
+            }
+
+            .nav button {
+                padding: 0.5% 4%;
+                margin-left: 0%;
+                border-radius: 20px;
+            }
+
+            .nav a {
+                font-size: 3.2vw;
+                font-weight: 400;
+            }
+
+            .nav button:hover {
+                transform: translateY(-2px);
+            }
+
+
+
+            .container {
+                padding-top: 35%;
+            }
+
+            .container h1 {
+                font-size: 6.5vw;
+            }
+
+            .all-company {
+                flex-direction: column;
+            }
+
+            .all-content {
+                width: 100%;
+            }
+
+            .all-content .bottom-img {
+                width: 100px;
+                background-position: 0px -50px;
+                background-size: 200px;
+                margin-bottom: 3%;
+            }
+
+            .all-content h1 {
+                font-size: 6vw;
+                padding-top: 5%;
+            }
+
+            .all-content p {
+                font-size: 3.5vw;
+            }
+
+            .all-content button {
+                padding: 1.5% 6%;
+                border: 1px solid black;
+                margin-top: 5%;
+                border-radius: 20px;
+            }
+
+            .all-content a {
+                font-size: 4vw;
+                font-weight: 400;
+            }
+
+            .all-img {
+                width: 100%;
+            }
+
+
+
+            .footer {
+                position: static;
+            }
+
+            .foot-content {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .footer-box {
+                width: 100%;
+                border-right: none;
+            }
+
+            .footer-box .bottom-img {
+                width: 80px;
+                background-position: 0px -35px;
+                background-size: 150px;
+                padding-bottom: 3%;
+            }
+
+            .footer-box img {
+                width: 40%;
+            }
+
+            .footer-box h1 {
+                font-size: 5vw;
+                padding: 2%;
+                padding-top: 7%;
+                padding-bottom: 0;
+            }
+
+            .location img {
+                width: 7%;
+            }
+
+            .footer-box p {
+                font-size: 3.5vw;
+            }
+
+            .social-box {
+                width: 9%;
+            }
+
+            .social-box img {
+                width: 100%;
+            }
+
+            .sb-phone img {
+                width: 90%;
+            }
+
+            .foot-end p {
+                font-size: 3.5vw;
+                padding: 2% 5%;
+            }
+
+        }
+
+
+
+
+        @media (max-width: 400px) {
+
+            .bottom-img {
+                width: 85px;
+                background-position: 0px -39px;
+                background-size: 170px;
+            }
+        }
+
+
+
+        @media (max-width: 300px) {
+
+            .nav button {
+                padding: 0.3% 4%;
+            }
+
+            .nav a {
+                font-size: 4vw;
+            }
+
+            .bottom-img {
+                width: 75px;
+                background-position: 0px -33px;
+                background-size: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="logo-srma"></a>
+        </div>
+        <div class="nav">
+            <button><a href="index.html">Home</a></button>
+            <button><a href="about.html">About</a></button>
+            <button><a href="contact.html">Contact</a></button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container">
+
+        <h1>About Us</h1>
+
+        <div class="all-company">
+            <div class="all-content">
+                <img src="img/logo.png" alt="">
+                <h1>Our All <span id="font-color">Companys</span></h1>
+                <div class="bottom-img"></div>
+                <p>We deals in Human & Veterinary both.</p>
+                <p>To see our all companys click below:-</p>
+                <button><a href="allCompany.html">All Companys</a></button>
+            </div>
+            <div class="all-img">
+                <img src="img/doc-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="foot-content">
+            <div class="footer-box">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="footer-box location">
+                <h1>Address Info</h1>
+                <div class="bottom-img"></div>
+                <img src="img/location.png" alt="">
+                <p>Shri Ramdev Medical Agency</p>
+                <p>Behind B.S.N.L. Exchange</p>
+                <p>Nohar (335523), Raj.</p>
+            </div>
+            <div class="footer-box">
+                <h1>Contact Info</h1>
+                <div class="bottom-img"></div>
+                <p>+91 8209231467</p>
+                <div class="social">
+                    <a href="tel:+918209231467" class="social-box sb-phone">
+                        <img src="img/phone.png" alt="">
+                    </a>
+                    <a href="https://wa.me/+918209231467" class="social-box">
+                        <img src="img/whatsapp.png" alt="">
+                    </a>
+                    <a href="mailto: karwasranarendar2@gmail.com" class="social-box">
+                        <img src="img/gmail.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="foot-end">
+            <p>Esteblished in 2005</p>
+            <p>Prahlad Singh Karwasra</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
